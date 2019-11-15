@@ -1,6 +1,6 @@
 # In order to find probability of rolling dice we can use formula for finding 
 # number of compositions. Using sympy, which is close to math formulas, but 
-# works slowly to compute coefficients of polynomial with big numbers. 
+# works slowly to compute coefficients of polynomial with big input numbers. 
 # This solution has been rewritten using numpy.
 # 1. Find the number of A-restricted compositions of n into exactly k parts 
 # https://en.wikipedia.org/wiki/Composition_(combinatorics)#Number_of_compositions

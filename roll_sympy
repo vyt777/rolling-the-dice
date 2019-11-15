@@ -12,20 +12,20 @@ from sympy import summation, Poly
 from sympy.abc import x, e
 
 def roll(d_num, sides, target):
-	"""
-	:param d_num: number of dices OR max size of each part of composition
-	:param sides: sides of dice OR number of parts of composition
-	:param target: number to get through rolling a single roll OR power in power 
-	series
-	:return: rounded probability
-	"""
-	su = summation(x**e, (e, 1, sides)) ** d_num
-	poly_coeffs = Poly(su, x).all_coeffs()[::-1]
-	if target + 1 > len(poly_coeffs):
-		return 0
-	num_of_compositions = poly_coeffs[target]
-	probability = num_of_compositions / (sides**d_num)
-	return (round(float(probability), 4)) 
+    """
+    :param d_num: number of dices OR max size of each part of composition
+    :param sides: sides of dice OR number of parts of composition
+    :param target: number to get through rolling a single roll OR power in power 
+    series
+    :return: rounded probability
+    """
+    su = summation(x**e, (e, 1, sides)) ** d_num
+    poly_coeffs = Poly(su, x).all_coeffs()[::-1]
+    if target + 1 > len(poly_coeffs):
+    	return 0
+    num_of_compositions = poly_coeffs[target]
+    probability = num_of_compositions / (sides**d_num)
+    return (round(float(probability), 4)) 
 
 assert roll(2, 6, 3) == 0.0556, "Basic example"
 assert roll(2, 6, 4) == 0.0833, "More points"

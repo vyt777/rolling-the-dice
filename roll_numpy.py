@@ -14,7 +14,7 @@ def roll(d_num, sides, target):
     :param d_num: number of dices OR max size of each part of composition
     :param sides: sides of dice OR number of parts of composition
     :param target: number to get through rolling a single roll OR power in power 
-    series
+    series (or integer n for composition)
     :return: rounded probability
     """
     polynomial = (poly1d([1 for e in range(0, sides + 1)]) - 1)
